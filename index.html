@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Fayre</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="signInForm">
+        <input type="email" id="emailField2" placeholder="Enter Email...">
+        <input type="email" id="passwordField2" placeholder="Enter Password...">
+        <button onclick="signIn()">Sign In</button>
+    </div>
+
+    <div id="SignUpForm">
+        <input type="email" id="emailField" placeholder="Enter Email...">
+        <input type="password" id="passwordField" placeholder="Enter Password...">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password...">
+        <button onclick="passwordCheck()">Register</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="/js/script.js"></script>    
+</body>
+</html>
