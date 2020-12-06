@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Fayre</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <button onclick="signOut()" id="signOut">Sign Out</button>
+
+    <div id="welcomeText"></div>
+
+    <div id="donationForm">
+        <p>Enter Food Info (i.e name on packaging)</p>
+        <input type="text" id="foodType" placeholder="Enter Food Name...">
+
+        <p>What type of animal food is it? (if the animal is not listed please select exotic)</p>
+        <select id="animalType">
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Small Pets</option>
+            <option>Fish</option>
+            <option>Bird</option>
+            <option>Exotic</option>
+        </select>
+
+        <p>What is the expiration date on the packaging?</p>
+        <input type="date" id="expirationDate">
+
+        <p>Would you willing to deliver? if so how far are you willing to travel?</p>
+        <input type="text" id="travelDistance" placeholder="Enter Distance in Miles...">
+
+        <p>Where would the pick up point be? (please input location using <a href="https://what3words.com/">what3words</a>)</p>
+        <input type="text" id="what3wordsLocation" placeholder="example, example, example...">
+
+        <p>How would you like to be contacted? (i.e phone number, email)</p>
+        <input type="text" id="contactPreference" placeholder="Enter Number or Email...">
+
+        <p>What time is best for someone to contact you?</p>
+        <input type="time" id="timePreference">
+
+        <button onclick="submitDonation()">Submit</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="/js/firebase.js"></script>
+    <script src="/js/donation.js"></script>    
+</body>
+</html>

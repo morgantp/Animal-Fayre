@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <button onclick="signOut()" id="signOut">Sign Out</button>
+
+    <div id="welcomeText"></div>
+
     <div id="signInForm">
         <input type="email" id="emailField2" placeholder="Enter Email...">
-        <input type="email" id="passwordField2" placeholder="Enter Password...">
+        <input type="password" id="passwordField2" placeholder="Enter Password...">
         <button onclick="signIn()">Sign In</button>
     </div>
 
@@ -20,9 +24,12 @@
         <button onclick="passwordCheck()">Register</button>
     </div>
 
+    <button onclick="makeDonation()" id="makeDonation">Make a Donation</button>
+
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="/js/firebase.js"></script>
     <script src="/js/script.js"></script>    
 </body>
 </html>

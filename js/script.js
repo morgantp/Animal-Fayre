@@ -1,19 +1,3 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyDS7mbF8prZqqudhZQz9zFEHn4Uwp2CQ_E",
-    authDomain: "animal-fayre.firebaseapp.com",
-    databaseURL: "https://animal-fayre.firebaseio.com",
-    projectId: "animal-fayre",
-    storageBucket: "animal-fayre.appspot.com",
-    messagingSenderId: "611791927437",
-    appId: "1:611791927437:web:61eb984a688988903e8ac4",
-    measurementId: "G-71PHY02LCV"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const auth = firebase.auth();
-
 function passwordCheck() {
     var password = document.getElementById("passwordField");
     var confirmPassword = document.getElementById("confirmPassword");
@@ -26,13 +10,25 @@ function passwordCheck() {
     }
 }
 
-function signUp() {
-    var email = document.getElementById("emailField");
-    var password = document.getElementById("passwordField");
+auth.onAuthStateChanged(function(user) {
+    if(user) {
+        var email = user.email;
+        document.getElementById("signOut").style.display = "inline-block";
+        document.getElementById("makeDonation").style.display = "inline-block";
+        welcomeText.textContent = 'Signed In: ' + email;
+    } else {
+        document.getElementById("signOut").style.display = "none";
+        document.getElementById("makeDonation").style.display = "none";
+        welcomeText.textContent = ' ';
 
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
+    }
+})
 
-    alert("Signed Up");
-
+function makeDonation() {
+    var user = firebase.auth().currentUser;
+    if(user) {
+        window.location = '/donation.html';
+    } else {
+        alert("Please Sign In");
+    }
 }
